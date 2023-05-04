@@ -27,7 +27,7 @@ namespace ADE.Tutorial
         [Function("GetTime")]
         public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "time")] HttpRequestData req)
         {
-            logger.LogInformation("C# HTTP trigger function processed a request.");
+            logger.LogInformation("C# HTTP trigger function received a request.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
