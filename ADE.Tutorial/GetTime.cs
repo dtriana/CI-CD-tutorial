@@ -34,10 +34,10 @@ namespace ADE.Tutorial
 
             var now = DateTime.UtcNow;
 
-            response.WriteString($"UTC Time: {now}");
+            response.WriteString($"UTC Time right now is: {now}\n");
 
             foreach (var timeZone in timeZones)
-                response.WriteString($"{(timeZone.IsDaylightSavingTime(now) ? timeZone.DaylightName : timeZone.StandardName)}: {TimeZoneInfo.ConvertTimeFromUtc(now, timeZone)}");
+                response.WriteString($"{(timeZone.IsDaylightSavingTime(now) ? timeZone.DaylightName : timeZone.StandardName)}: {TimeZoneInfo.ConvertTimeFromUtc(now, timeZone)}\n");
 
             return response;
         }
